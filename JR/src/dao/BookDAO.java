@@ -11,8 +11,7 @@ public class BookDAO {
     public void insertBook(BookVO bookVO) {
         bookList.getBookVOList().add(bookVO);
     }
-    
-    public void deleteBook(BookVO bookVO) {
+        public void deleteBook(BookVO bookVO) {
         for(int i = 0; i <  bookList.getBookVOList().size(); i++){
             if(bookList.getBookVOList().get(i).getBookName().equals(bookVO.getBookName()) &&
                     bookList.getBookVOList().get(i).getWriter().equals(bookVO.getWriter())){
