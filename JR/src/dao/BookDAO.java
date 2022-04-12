@@ -6,8 +6,8 @@ import vo.BookVO;
 import java.util.List;
 
 public class BookDAO {
-    BookList bookList = new BookList();
 
+    BookList bookList = new BookList();
     public void insertBook(BookVO bookVO) {
         bookList.getBookVOList().add(bookVO);
     }
