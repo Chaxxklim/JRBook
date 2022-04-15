@@ -14,7 +14,6 @@ public class BookService {
 
     public void deleteBook(BookVO bookVO) {
         bookDAO.deleteBook(bookVO);
-
     }
 
     public List<BookVO> bookList() {
