@@ -22,6 +22,5 @@ public class BookDAO {
 
     public List<BookVO> bookList() {
         return bookList.getBookVOList();
-
     }
 }
