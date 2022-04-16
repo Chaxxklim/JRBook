@@ -16,6 +16,7 @@ public class BookService {
         bookDAO.deleteBook(bookVO);
     }
 
+
     public List<BookVO> bookList() {
         return bookDAO.bookList();
     }
