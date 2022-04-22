@@ -2,6 +2,8 @@ package service;
 
 import dao.BookDAO;
 import vo.BookVO;
+
+import java.sql.ResultSet;
 import java.util.List;
 
 public class BookService {
@@ -14,10 +16,11 @@ public class BookService {
 
     public void deleteBook(BookVO bookVO) {
         bookDAO.deleteBook(bookVO);
+
     }
 
 
-    public List<BookVO> bookList() {
+    public ResultSet bookList() {
         return bookDAO.bookList();
     }
 }

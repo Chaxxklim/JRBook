@@ -3,7 +3,7 @@ package controller;
 import service.BookService;
 import vo.BookVO;
 
-import java.util.List;
+import java.sql.ResultSet;
 import java.util.Scanner;
 
 public class BookController {
@@ -57,14 +57,20 @@ public class BookController {
     }
 
     private void listView() {
-        System.out.println("책 리스트 입니다.");
-        List<BookVO> bookList = bookService.bookList();
-        for (BookVO bookVO: bookList) {
-            System.out.println("제목 : " + bookVO.getBookName());
-            System.out.println("글쓴이 : " + bookVO.getWriter());
-            System.out.println("출판일 : " + bookVO.getDate());
-            System.out.println("-------------------------------");
+
+        ResultSet bookList = bookService.bookList();
+        try{
+            System.out.println("책 리스트 입니다.");
+            while (bookList.next()){
+                System.out.println("책 번호 : " + bookList.getInt(1));
+                System.out.println("책 이름 : " + bookList.getString(2));
+                System.out.println("저자 : " + bookList.getString(3));
+                System.out.println("출판일 : " + bookList.getString(4));
+            }
+        } catch (Exception e){
+            System.out.println("Error : " + e);
         }
+
         mainView();
     }
 
