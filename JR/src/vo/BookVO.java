@@ -1,17 +1,28 @@
 package vo;
 
 public class BookVO {
+    int bookId;
     String bookName;
     String writer;
     String date;
 
-    public BookVO(String bookName, String writer, String date) {
+    public BookVO() {
+    }
+
+    public BookVO(int bookId, String bookName, String writer, String date) {
+        this.bookId = bookId;
         this.bookName = bookName;
         this.writer = writer;
         this.date = date;
     }
 
-    public BookVO(){}
+    public int getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
 
     public String getBookName() {
         return bookName;
@@ -36,8 +47,4 @@ public class BookVO {
     public void setDate(String date) {
         this.date = date;
     }
-
-
-
-
 }
